@@ -6,6 +6,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Busca } from '../busca/busca';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-filmes',
@@ -15,6 +17,7 @@ import { Busca } from '../busca/busca';
     CommonModule,
     MatProgressSpinnerModule,
     Busca,
+    MatButtonModule,
   ],
   templateUrl: './filmes.html',
   styleUrl: './filmes.css',

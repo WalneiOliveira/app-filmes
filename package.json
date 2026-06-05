@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "deploy": "ng build --configuration production --base-href 'https://WalneiOliveira.github.io/app-filmes/' && npx angular-cli-ghpages --dir=dist/demo/browser"
   },
   "dependencies": {
     "@angular/cdk": "~21.2.13",
