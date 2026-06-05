@@ -1,0 +1,4 @@
+<mat-form-field appearance="outline">
+  <mat-icon matPrefix>search</mat-icon>
+  <input matInput placeholder="Buscar filme..." #termoBusca (keyup.enter)="emitirBusca(termoBusca.value)" />
+</mat-form-field>

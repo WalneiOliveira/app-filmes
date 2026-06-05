@@ -1,0 +1,31 @@
+.filmes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.nota-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin: 8px 16px;
+}
+
+:host mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+:host mat-card-content {
+  flex: 1;
+}
+
+:host mat-form-field {
+  border-radius: 8px;
+  margin-right: 8px;
+}
