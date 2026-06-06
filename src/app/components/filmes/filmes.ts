@@ -1,24 +1,14 @@
-import { Component, OnInit, Pipe, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { TmdbService } from '../../services/tmdb';
 import { Filme } from '../../models/filme';
 import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Busca } from '../busca/busca';
-import { MatButtonModule } from '@angular/material/button';
-
 
 @Component({
   selector: 'app-filmes',
-  imports: [
-    MatCardModule,
-    MatChipsModule,
-    CommonModule,
-    MatProgressSpinnerModule,
-    Busca,
-    MatButtonModule,
-  ],
+  imports: [MatCardModule, CommonModule, MatProgressSpinnerModule, Busca],
   templateUrl: './filmes.html',
   styleUrl: './filmes.css',
 })
@@ -26,16 +16,11 @@ export class Filmes implements OnInit {
   filmes = signal<Filme[]>([]);
   readonly imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
   carregando = signal<boolean>(true);
-  termoBusca = signal<string>('');
 
   constructor(private tmdbService: TmdbService) {}
 
   ngOnInit() {
-    this.tmdbService.buscarFilmesPopulares().subscribe((resposta) => {
-      this.filmes.set(resposta.results);
-      this.carregando.set(false);
-      // console.log(this.filmes);
-    });
+    this.buscar('');
   }
 
   resumir(texto: string, limite: number = 80): string {

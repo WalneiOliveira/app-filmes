@@ -5,6 +5,11 @@
   padding: 16px;
 }
 
+mat-spinner {
+  margin: 100px auto;
+  grid-column: 1 / -1;
+}
+
 .nota-badge {
   display: inline-block;
   padding: 4px 10px;

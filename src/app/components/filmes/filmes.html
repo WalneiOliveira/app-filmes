@@ -1,8 +1,9 @@
 <app-busca (termoBuscado)="buscar($event)" />
+
 <div class="filmes-grid">
-  @if(carregando()){
+  @if(carregando()) {
   <mat-spinner></mat-spinner>
-  } @else { @for(filme of filmes(); track filme.id){
+  } @else { @for(filme of filmes(); track filme.id) {
   <mat-card>
     <img
       mat-card-image
@@ -10,9 +11,9 @@
       [alt]="filme.title"
     />
     <mat-card-header>
-      <mat-card-title>{{filme.title}}</mat-card-title>
+      <mat-card-title>{{ filme.title }}</mat-card-title>
     </mat-card-header>
-    <mat-card-content> {{ resumir(filme.overview) }} </mat-card-content>
+    <mat-card-content>{{ resumir(filme.overview) }}</mat-card-content>
     <span [style.background]="corDaNota(filme.vote_average)" class="nota-badge">
       ⭐ {{ filme.vote_average | number:'1.1-1' }}
     </span>
