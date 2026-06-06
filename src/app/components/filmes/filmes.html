@@ -20,12 +20,14 @@
   </mat-card>
   } }
 </div>
-<mat-paginator
-  [length]="totalResultados()"
-  [pageSize]="itensPorPagina()"
-  [pageIndex]="paginaAtual() - 1"
-  [pageSizeOptions]="[5, 10, 20]"
-  (page)="mudarPagina($event)"
-  aria-label="Selecionar página"
->
-</mat-paginator>
+<div class="container-paginator">
+  <mat-paginator
+    [length]="totalResultados()"
+    [pageSize]="itensPorPagina()"
+    [pageIndex]="paginaAtual() - 1"
+    [pageSizeOptions]="[5, 10, 20]"
+    (page)="mudarPagina($event)"
+    aria-label="Selecionar página"
+  >
+  </mat-paginator>
+</div>

@@ -42,7 +42,18 @@ mat-spinner {
   margin-right: 8px;
 }
 
+
+
 mat-card:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.container-paginator {
+  display: flex;
+  justify-content: center;
+}
+
+.container-paginator mat-paginator {
+  width: auto;
 }
