@@ -24,11 +24,13 @@ export class TmdbService {
     return this.http.get<T>(url, { headers: this.headers });
   }
 
-  buscarFilmesPopulares(): Observable<RespostaApi> {
-    return this.request<RespostaApi>('/movie/popular')
+  buscarFilmesPopulares(page: number = 1): Observable<RespostaApi> {
+    return this.request<RespostaApi>(`/movie/popular?page=${page}`);
   }
 
-  buscarPorNome(query: string): Observable<RespostaApi> {
-    return this.request<RespostaApi>(`/search/movie?query=${query}`);
+  buscarPorNome(query: string, page: number = 1): Observable<RespostaApi> {
+    return this.request<RespostaApi>(
+      `/search/movie?query=${query}&page=${page}`,
+    );
   }
 }

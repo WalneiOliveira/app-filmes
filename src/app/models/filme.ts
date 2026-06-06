@@ -12,4 +12,5 @@ export interface RespostaApi {
   page: number;
   results: Filme[];
   total_pages: number;
+  total_results: number;
 }
